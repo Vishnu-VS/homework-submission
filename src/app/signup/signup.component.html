@@ -1,14 +1,41 @@
 <nz-layout>
-    <nz-header>
-        <div class="logo"></div>
-        <ul nz-menu nzTheme="dark" nzMode="horizontal">
-            <li nz-menu-item>nav 1</li>
-            <li nz-menu-item>nav 2</li>
-            <li nz-menu-item>nav 3</li>
-        </ul>
-    </nz-header>
     <nz-content>
-        <div class="inner-content">Content</div>
+        <div class="card-wrapper">
+            <nz-card>
+                <nz-card-meta nzTitle="Sign Up"></nz-card-meta>
+                <form nz-form [formGroup]="signupForm" (ngSubmit)="submitSignup()">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please enter your username">
+                            <input type="email" nz-input placeholder="Email" nzSize="large" formControlName="email" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please enter your password">
+                            <input type="password" nz-input placeholder="Password" nzSize="large" formControlName="password" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control [nzErrorTip]="errorTpl">
+                            <input type="password" nz-input placeholder="Confirm Password" nzSize="large" formControlName="confirmPassword" />
+                            <ng-template #errorTpl let-control>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Please confirm your password!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('confirm')">
+                                    Passwords do not match!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <div class="foot-wrapper">
+                        <button class="mb-24" nz-button [nzSize]="'large'" nzType="primary" type="submit">Sign Up</button>
+                        <p>Already have an account? <a routerLink="/login" nz-button [nzSize]="'large'" nzType="link">Login</a>
+                    </div>
+                    <div>
+
+                    </div>
+                </form>
+            </nz-card>
+        </div>
     </nz-content>
-    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
 </nz-layout>

@@ -1,0 +1,11 @@
+<nz-layout>
+    <nz-content>
+        <nz-empty [nzNotFoundContent]="contentTpl" [nzNotFoundFooter]="footerTpl"></nz-empty>
+        <ng-template #contentTpl>
+            <span> 404 Page Not Found </span>
+        </ng-template>
+        <ng-template #footerTpl>
+            <button nz-button nzType="primary" routerLink="/">Home</button>
+        </ng-template>
+    </nz-content>
+</nz-layout>

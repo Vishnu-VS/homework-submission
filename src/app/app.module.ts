@@ -20,9 +20,12 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 registerLocaleData(en);
 
@@ -30,7 +33,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ registerLocaleData(en);
     NzIconModule,
     NzSpaceModule,
     NzButtonModule,
-    NzFormModule
+    NzFormModule,
+    NzEmptyModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

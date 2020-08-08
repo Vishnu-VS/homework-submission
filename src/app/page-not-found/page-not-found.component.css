@@ -1,0 +1,9 @@
+nz-layout {
+    height: 100vh;
+}
+
+nz-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
