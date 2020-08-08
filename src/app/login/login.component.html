@@ -1,0 +1,31 @@
+<nz-layout>
+    <nz-content>
+        <div class="card-wrapper">
+            <nz-card>
+                <nz-card-meta nzTitle="Sign In"></nz-card-meta>
+                <form nz-form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please input your username">
+                            <input type="email" nz-input placeholder="Email" nzSize="large" formControlName="email" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please input your password">
+                            <nz-input-group [nzSuffix]="suffixTemplate" [nzSize]="'large'">
+                                <input [type]="passwordVisible ? 'text' : 'password'" nz-input placeholder="Password" formControlName="password" />
+                            </nz-input-group>
+                            <ng-template #suffixTemplate>
+                                <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'" (click)="passwordVisible = !passwordVisible"></i>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <div class="foot-wrapper">
+                        <a nz-button [nzSize]="'large'" nzType="link">Sign Up</a>
+                        <div class="spacer-btw"></div>
+                        <button nz-button [nzSize]="'large'" nzType="primary" type="submit">Log In</button>
+                    </div>
+                </form>
+            </nz-card>
+        </div>
+    </nz-content>
+</nz-layout>
